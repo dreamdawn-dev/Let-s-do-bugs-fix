@@ -1,0 +1,27 @@
+# Build outputs
+build/
+dist/
+
+# Smoke test environment (contains third-party mod JARs)
+smoke/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.project
+.classpath
+.settings/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Java
+*.class
+*.jar
+*.war
+*.log
+
+# Crash logs
+crash*.txt
