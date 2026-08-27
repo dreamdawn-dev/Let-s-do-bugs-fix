@@ -6,6 +6,7 @@ license="GPL-3.0"
 modId="letsdo_crashfix"
 version="1.0.3"
 displayName="[Let's Do] Crash Fix"
+logoFile="logo.png"
 authors="Codex"
 description='''Fixes startup crashes from concurrent flammable registration by multiple [Let's Do] mods, and a Create schematic printing conflict with Vinery storage blocks. Also makes Farm & Charm sprinklers hydrate Farmer''s Delight Rich Soil Farmland. Vanilla-only mixins; does not modify any other mod.'''
 mixinConfigs="patchmod.mixins.json"
