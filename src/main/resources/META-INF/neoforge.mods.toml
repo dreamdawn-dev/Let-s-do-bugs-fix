@@ -1,0 +1,27 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="GPL-3.0"
+
+[[mods]]
+modId="letsdo_crashfix"
+version="2.0.0"
+displayName="[Let's Do] Crash Fix"
+authors="Codex"
+description='''Fixes Create schematic printing conflict with [Let''s Do] mods (Vinery, Meadow, Bakery, BloomingNature, WilderNature, Brewery). Vanilla-only mixin; does not modify any other mod.'''
+
+[[dependencies.letsdo_crashfix]]
+modId="neoforge"
+mandatory=true
+versionRange="[21.0,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.letsdo_crashfix]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.21,)"
+ordering="NONE"
+side="BOTH"
+
+[[mixins]]
+config="patchmod.mixins.json"

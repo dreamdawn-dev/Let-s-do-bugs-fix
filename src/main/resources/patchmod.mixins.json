@@ -4,9 +4,7 @@
   "package": "com.letsdo.crashfix.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "FireBlockFlammableMixin",
-    "LetsDoStorageBlockEntityMixin",
-    "RichSoilFarmlandSprinklerMixin"
+    "LetsDoStorageBlockEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1
