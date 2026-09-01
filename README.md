@@ -1,6 +1,6 @@
 # [Let's Do] Crash Fix
 
-Forge 1.20.1 独立补丁模组，包含三类修复：
+Forge 1.20.1，Neoforge 1.21.1 独立补丁模组，包含三类修复：
 
 1. 多个 [Let's Do] 模组（Meadow、BloomingNature、Vinery 等）在
    `FMLCommonSetupEvent` 并行阶段同时向原版 `FireBlock` 的可燃方块表写入
