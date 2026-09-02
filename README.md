@@ -8,8 +8,7 @@ Forge 1.20.1，Neoforge 1.21.1 独立补丁模组，包含三类修复：
 
 `java.lang.ArrayIndexOutOfBoundsException: Index 1024 out of bounds for length 513`
 
-2. Create 的蓝图打印机/蓝图大炮在加载含 Vinery 储酒架方块实体
-   （`StorageBlockEntity`）的蓝图时崩溃：
+2. Create 的蓝图打印机/蓝图大炮在加载含 [Let's Do] 方块实体（如储物架 StorageBlockEntity）的蓝图时崩溃：
 
 `java.lang.ClassCastException: SchematicLevel cannot be cast to ServerLevel`
 
