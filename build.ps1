@@ -16,8 +16,8 @@ $cp = @(
   (Join-Path $libraries 'com\mojang\datafixerupper\9.0.19\datafixerupper-9.0.19.jar')
 )
 
-# The Let's Do jars are needed to compile the multi-target StorageBlockEntity
-# mixin. Locate them by ASCII-only patterns to avoid CJK path issues in PS 5.1.
+# Let's Do 模组 jar 是编译多目标 StorageBlockEntity Mixin 所必需的。
+# 使用纯 ASCII 模式匹配以规避 PS 5.1 的 CJK 路径问题。
 $letDoPatterns = @(
   '*vinery*1.5*.jar',
   '*meadow*1.4*.jar',
@@ -57,8 +57,7 @@ if ($LASTEXITCODE -ne 0) { throw 'javac failed' }
 
 Get-ChildItem -LiteralPath $resDir -Force | Copy-Item -Destination $outDir -Recurse -Force
 
-# Mixin on NeoForge reads the mixin config list from the jar MANIFEST's
-# "MixinConfigs" attribute.
+# NeoForge 的 Mixin 从 jar 的 MANIFEST.MF 中读取 "MixinConfigs" 属性。
 $manifest = Join-Path $PSScriptRoot 'build\MANIFEST.MF'
 Set-Content -LiteralPath $manifest -Value @(
   'Manifest-Version: 1.0',

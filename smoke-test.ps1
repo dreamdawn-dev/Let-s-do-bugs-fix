@@ -6,8 +6,8 @@ $libraries = Join-Path $minecraft 'libraries'
 $patchJar = Join-Path $PSScriptRoot 'dist\letsdo-crashfix-1.0.0-mc1.20.1-forge.jar'
 $smokeDir = Join-Path $PSScriptRoot 'smoke'
 
-# Locate the version folder by ASCII-only patterns (folder name contains CJK,
-# and PS 5.1 misreads UTF-8 scripts without BOM, so avoid CJK literals).
+# 使用纯 ASCII 模式定位版本文件夹（文件夹名包含 CJK 字符，
+# PS 5.1 无法正确读取无 BOM 的 UTF-8 脚本，因此避免 CJK 字面量）。
 $versionDir = Get-ChildItem -LiteralPath (Join-Path $minecraft 'versions') -Directory |
     Where-Object {
         $m = Join-Path $_.FullName 'mods'
@@ -76,7 +76,7 @@ foreach ($arg in $json.arguments.jvm) {
     if ($arg -is [string]) {
         $jvmArgs += $arg
     } elseif ($arg.rules -and $arg.value) {
-        # macOS-only flag; never valid on Windows
+        # 仅 macOS 的标志；Windows 上永远无效
         if ($arg.value -match 'XstartOnFirstThread') { continue }
         $allow = $false
         foreach ($rule in $arg.rules) {
@@ -92,7 +92,7 @@ $jvmArgs = $jvmArgs | ForEach-Object {
     $s
 }
 
-# Keep only module-path entries that actually exist locally.
+# 仅保留本地实际存在的模块路径条目。
 $finalJvm = @()
 for ($i = 0; $i -lt $jvmArgs.Count; $i++) {
     if ($jvmArgs[$i] -eq '-p') {
@@ -121,7 +121,7 @@ $serverArgs = @(
 
 $allArgs = $finalJvm + @('cpw.mods.bootstraplauncher.BootstrapLauncher') + $serverArgs
 
-# Write an @argfile to avoid Windows command-line length limits.
+# 使用 @argfile 以规避 Windows 命令行长度限制。
 $argFile = Join-Path $smokeDir 'jvm_args.txt'
 Set-Content -LiteralPath $argFile -Value (($allArgs | ForEach-Object { '"' + $_ + '"' })) -Encoding Ascii
 
