@@ -23,7 +23,7 @@ Forge 1.20.1，Neoforge 1.21.1 独立补丁模组，包含三类修复：
 并发调用 `FireBlock.registerFlammable`（SRG 名 `m_53444_`），两张表在
 rehash 时被同时改写，key/value 数组长度不一致，直接越界崩溃。
 
-Let`s do 系列的部分模组注册的方块带有该属性 `StorageBlockEntity.setChanged()` 会把 level 强转为
+Let us do 系列的部分模组注册的方块带有该属性 `StorageBlockEntity.setChanged()` 会把 level 强转为
 `ServerLevel`，而 Create 的蓝图系统使用假的 `SchematicLevel`，强转直接
 抛异常，导致蓝图无法加载。
 
